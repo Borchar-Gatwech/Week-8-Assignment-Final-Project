@@ -308,21 +308,5 @@ CREATE INDEX idx_inventory_product ON inventory (product_id);
 -- Sample constraints / checks examples
 -- --------------------------------------------------
 ALTER TABLE orders ADD CONSTRAINT chk_total_calc CHECK (total >= 0);
--- (Detailed computed checks like subtotal + shipping - discount = total are best enforced in application or triggers.)
-
--- --------------------------------------------------
--- (Optional) Triggers for automatic behavior - example: maintain updated_at in user_profiles if needed
--- --------------------------------------------------
--- Example trigger (commented out; enable if desired)
--- DELIMITER $$
--- CREATE TRIGGER trg_users_updated_at BEFORE UPDATE ON users
--- FOR EACH ROW
--- BEGIN
---   SET NEW.updated_at = CURRENT_TIMESTAMP;
--- END$$
--- DELIMITER ;
-
--- --------------------------------------------------
--- End of schema
--- --------------------------------------------------
+-
 
